@@ -9,10 +9,10 @@ import WeatherDetailsMinMax from '../WeatherDetailsMinMax';
  */
 
 const WeatherDetails = props => {
-  const { className, min, max, unit, city, state, icon } = props;
+  const { className, min, max, unit, city, country, icon } = props;
   return (
     <div className={`weather-result__details ${className}`}>
-      <WeatherDetailsCity cityName={city} state={state} icon={icon} />
+      <WeatherDetailsCity cityName={city} country={country} icon={icon} />
       <WeatherDetailsMinMax min={min} max={max} unit={unit} />
     </div>
   );
@@ -23,8 +23,8 @@ WeatherDetails.propTypes = {
   className: PropTypes.string,
   // City Name
   city: PropTypes.string.isRequired,
-  // State Province of the city
-  state: PropTypes.string.isRequired,
+  // Country Province of the city
+  country: PropTypes.string.isRequired,
   // Min temperature from API Call
   min: PropTypes.number.isRequired,
   // Max temperature from API Call

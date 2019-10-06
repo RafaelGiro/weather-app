@@ -8,12 +8,12 @@ import CityListItem from '../../atoms/CityListItem';
  */
 
 const CityList = props => {
-  const { className } = props;
+  const { className, handler, cityOptions } = props;
   return (
     <ul className={`city-nav__list ${className}`}>
-      <CityListItem active>São Carlos - SP</CityListItem>
-      <CityListItem>São Paulo - SP</CityListItem>
-      <CityListItem>Potência Industrial, Ibaté - SP</CityListItem>
+      <CityListItem handler={handler}>{cityOptions.city1}</CityListItem>
+      <CityListItem handler={handler}>{cityOptions.city2}</CityListItem>
+      <CityListItem handler={handler}>{cityOptions.city3}</CityListItem>
     </ul>
   );
 };
@@ -21,6 +21,14 @@ const CityList = props => {
 CityList.propTypes = {
   // Extra classes that is passed
   className: PropTypes.string,
+  // Function passed from parent to handle API Call click
+  handler: PropTypes.func.isRequired,
+  // City options object comming from the WatherPage component
+  cityOptions: PropTypes.shape({
+    city1: PropTypes.object,
+    city2: PropTypes.object,
+    city3: PropTypes.object,
+  }).isRequired,
 };
 
 CityList.defaultProps = {

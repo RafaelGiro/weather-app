@@ -8,10 +8,10 @@ import CityList from '../../molecules/CityList';
  */
 
 const CityNav = props => {
-  const { className } = props;
+  const { className, handler, cityOptions } = props;
   return (
     <div className={`city-nav ${className}`}>
-      <CityList />
+      <CityList handler={handler} cityOptions={cityOptions} />
     </div>
   );
 };
@@ -19,6 +19,10 @@ const CityNav = props => {
 CityNav.propTypes = {
   // Extra classes that is passed
   className: PropTypes.string,
+  // Function passed from parent to handle API Call click
+  handler: PropTypes.func.isRequired,
+  // City options object comming from the WatherPage component
+  cityOptions: PropTypes.shape({}).isRequired,
 };
 
 CityNav.defaultProps = {

@@ -21,7 +21,7 @@ Button.propTypes = {
   // Extra classes that is passed
   className: PropTypes.string,
   // Button pre-defined variants
-  variant: PropTypes.oneOf(['default', 'nav']),
+  variant: PropTypes.oneOf(['default', 'nav', 'no-style']),
 };
 
 Button.defaultProps = {

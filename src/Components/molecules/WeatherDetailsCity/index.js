@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
  */
 
 const WeatherDetailsCity = props => {
-  const { className, cityName, state, icon } = props;
+  const { className, cityName, country, icon } = props;
   return (
     <div className={`weather-result__details-city ${className}`}>
       <p className="weather-result__city-name">
-        {cityName} - {state}
+        {cityName} - {country}
       </p>
       <img
         className="weather-result__img"
@@ -26,8 +26,8 @@ WeatherDetailsCity.propTypes = {
   className: PropTypes.string,
   // Currently city name displaying the weather
   cityName: PropTypes.string.isRequired,
-  // City's state province
-  state: PropTypes.string.isRequired,
+  // City's country province
+  country: PropTypes.string.isRequired,
   // Weather icon from API
   icon: PropTypes.string.isRequired,
 };

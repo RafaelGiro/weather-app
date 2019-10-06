@@ -1,6 +1,12 @@
 .city-nav__list-item {
   font-size: 2.4rem;
   color: $color-grey-light;
+  cursor: pointer;
+  z-index: 2;
+
+  &:hover {
+    color: $color-grey;
+  }
 
   &--active {
     color: $color-grey-dark;

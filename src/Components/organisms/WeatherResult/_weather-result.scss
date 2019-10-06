@@ -3,4 +3,8 @@
   align-items: center;
   color: $color-grey-dark;
   height: 100%;
+
+  &--inactive {
+    color: $color-grey-lighter;
+  }
 }

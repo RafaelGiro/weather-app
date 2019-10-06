@@ -9,11 +9,14 @@ import WeatherDetails from '../../molecules/WeatherDetails';
  */
 
 const WeatherResult = props => {
-  const { className, city, state, temp, min, max, unit, icon } = props;
+  const { className, city, country, temp, min, max, unit, icon, inactive } = props;
+
+  const inactiveClass = inactive ? 'weather-result--inactive' : '';
+
   return (
-    <div className={`weather-result ${className}`}>
+    <div className={`weather-result ${inactiveClass} ${className}`}>
       <WeatherCurrent unit={unit}>{temp}</WeatherCurrent>
-      <WeatherDetails city={city} state={state} min={min} max={max} unit={unit} icon={icon} />
+      <WeatherDetails city={city} country={country} min={min} max={max} unit={unit} icon={icon} />
     </div>
   );
 };
@@ -23,8 +26,8 @@ WeatherResult.propTypes = {
   className: PropTypes.string,
   // City Name
   city: PropTypes.string.isRequired,
-  // State Province of the city
-  state: PropTypes.string.isRequired,
+  // Country Province of the city
+  country: PropTypes.string.isRequired,
   // Current temperature from API Call
   temp: PropTypes.number.isRequired,
   // Min temperature from API Call
@@ -35,6 +38,8 @@ WeatherResult.propTypes = {
   icon: PropTypes.string.isRequired,
   // Temperature Unit
   unit: PropTypes.oneOf(['C', 'F', 'K']),
+  // Flag to see if some API call has been made
+  inactive: PropTypes.bool.isRequired,
 };
 
 WeatherResult.defaultProps = {
