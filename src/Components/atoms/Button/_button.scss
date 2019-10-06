@@ -1,0 +1,51 @@
+/* Base button is a block with gray text */
+.btn {
+  font-family: $font-primary;
+  cursor: pointer;
+  background-color: transparent;
+  color: $color-grey;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  border: 2px solid $color-grey-light;
+  border-radius: 0.4rem;
+  position: relative;
+
+  /* nav type Button.
+   *  Doesn't have a border, an arrow is added to indicate navigation and
+   *  it shows a underline when text is hovered
+   */
+  &-nav {
+    color: $color-grey;
+    padding: 0 0.4rem 0 0rem;
+    border: none;
+    border-radius: 0;
+    transform: translateX(-0.4rem);
+    transition: all 0.2s;
+
+    &:hover {
+      text-decoration: underline;
+      transform: translateX(0rem);
+
+      color: $color-grey-dark;
+    }
+
+    &:active {
+      color: $color-grey;
+    }
+
+    /* arrow to indicate a navigation button */
+    &:before {
+      content: "→";
+      position: absolute;
+      color: $color-grey;
+      left: 100%;
+
+      &:hover {
+        color: $color-grey-dark;
+      }
+      &:active {
+        color: $color-grey-light;
+      }
+    }
+  }
+}
