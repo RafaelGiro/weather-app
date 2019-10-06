@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /* Logo component its the main header link. */
 
@@ -10,7 +10,12 @@ const Logo = props => {
 
 Logo.propTypes = {
   // Extra classes that is passed
-  className: PropTypes.string
+  className: PropTypes.string,
+};
+
+Logo.defaultProps = {
+  // No aditional classes is the default value
+  className: '',
 };
 
 export default Logo;

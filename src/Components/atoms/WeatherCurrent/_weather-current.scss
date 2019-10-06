@@ -1,0 +1,12 @@
+.weather-result__current {
+  transform: translateX(-9.6rem);
+  font-size: 72rem;
+  letter-spacing: -6.4rem;
+  font-weight: 200;
+
+  &--unit {
+    font-size: 20rem;
+    letter-spacing: 0rem;
+    margin-left: 6.4rem;
+  }
+}

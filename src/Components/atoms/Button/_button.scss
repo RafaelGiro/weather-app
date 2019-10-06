@@ -1,6 +1,7 @@
 /* Base button is a block with gray text */
 .btn {
   font-family: $font-primary;
+  font-size: 1.6rem;
   cursor: pointer;
   background-color: transparent;
   color: $color-grey;
@@ -15,7 +16,7 @@
    *  it shows a underline when text is hovered
    */
   &-nav {
-    color: $color-grey;
+    color: $color-mississipi-primary;
     padding: 0 0.4rem 0 0rem;
     border: none;
     border-radius: 0;
@@ -26,7 +27,7 @@
       text-decoration: underline;
       transform: translateX(0rem);
 
-      color: $color-grey-dark;
+      color: $color-mississipi-secondary;
     }
 
     &:active {
@@ -37,14 +38,14 @@
     &:before {
       content: "→";
       position: absolute;
-      color: $color-grey;
+      color: $color-mississipi-primary;
       left: 100%;
 
       &:hover {
-        color: $color-grey-dark;
+        color: $color-mississipi-secondary;
       }
       &:active {
-        color: $color-grey-light;
+        color: $color-grey;
       }
     }
   }

@@ -1,4 +1,9 @@
 .logo {
   font-size: 2.4rem;
-  color: $color-grey-dark;
+  color: $color-grey-lighter;
+  transition: color 0.3s ease-out;
+
+  &:hover {
+    color: $color-grey-dark;
+  }
 }

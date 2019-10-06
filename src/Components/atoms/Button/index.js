@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /* Button component contains minimal style. It's just a block with text.
  *  You can pass his 'type' props for defined types of button or
@@ -7,8 +7,12 @@ import PropTypes from "prop-types";
  */
 
 const Button = props => {
-  const { children, type, className } = props;
-  return <button className={`btn btn-${type} ${className}`}>{children}</button>;
+  const { children, variant, className } = props;
+  return (
+    <button type="button" className={`btn btn-${variant} ${className}`}>
+      {children}
+    </button>
+  );
 };
 
 Button.propTypes = {
@@ -16,8 +20,15 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   // Extra classes that is passed
   className: PropTypes.string,
-  // Button pre-defined types
-  type: PropTypes.oneOf(["nav", "outlined", "contained"])
+  // Button pre-defined variants
+  variant: PropTypes.oneOf(['default', 'nav']),
+};
+
+Button.defaultProps = {
+  // No aditional classes is the default value
+  className: '',
+  // default button variant with no aditional styles
+  variant: 'default',
 };
 
 export default Button;

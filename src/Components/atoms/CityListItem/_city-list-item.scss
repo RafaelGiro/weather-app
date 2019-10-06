@@ -1,0 +1,9 @@
+.city-nav__list-item {
+  font-size: 2.4rem;
+  color: $color-grey-light;
+
+  &--active {
+    color: $color-grey-dark;
+    border-bottom: 2px solid $color-grey-dark;
+  }
+}

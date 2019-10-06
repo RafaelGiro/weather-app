@@ -1,0 +1,21 @@
+.weather-result__min-max {
+  &-container {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+  }
+
+  &-item {
+    font-size: 7.2rem;
+
+    &--min {
+      font-size: 6.4rem;
+      fill: $color-min;
+    }
+
+    &--max {
+      font-size: 6.4rem;
+      fill: $color-max;
+    }
+  }
+}
