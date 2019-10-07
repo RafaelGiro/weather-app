@@ -10,13 +10,17 @@ const WeatherDetailsCity = props => {
   return (
     <div className={`weather-result__details-city ${className}`}>
       <p className="weather-result__city-name">
-        {cityName} - {country}
+        {cityName} {country ? `- ${country}` : ''}
       </p>
-      <img
-        className="weather-result__img"
-        alt="sunny/cloudy day"
-        src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
-      />
+      {icon ? (
+        <img
+          className="weather-result__img"
+          alt="sunny/cloudy day"
+          src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+        />
+      ) : (
+        <div />
+      )}
     </div>
   );
 };
@@ -27,14 +31,18 @@ WeatherDetailsCity.propTypes = {
   // Currently city name displaying the weather
   cityName: PropTypes.string.isRequired,
   // City's country province
-  country: PropTypes.string.isRequired,
+  country: PropTypes.string,
   // Weather icon from API
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.string,
 };
 
 WeatherDetailsCity.defaultProps = {
   // Default value of no aditional classes
   className: '',
+  // No default country
+  country: '',
+  // Default icon in undefined, so it will not render an image
+  icon: '',
 };
 
 export default WeatherDetailsCity;

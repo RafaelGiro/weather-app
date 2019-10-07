@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import Logo from '../../atoms/Logo';
 import Button from '../../atoms/Button';
@@ -10,7 +10,9 @@ import Button from '../../atoms/Button';
  */
 
 const Header = props => {
-  const { className, location } = props;
+  const { className } = props;
+  // location hook from react-router v5.1
+  const location = useLocation();
 
   // Route that the button will point
   const buttonPath = location.pathname === '/' ? '/minmax' : '/';
@@ -18,22 +20,20 @@ const Header = props => {
   const buttonLabel = location.pathname === '/' ? 'Visualizar min/max' : 'Previsão do tempo';
 
   return (
-    <div className={`header ${className}`}>
+    <header className={`header ${className}`}>
       <Link to="/">
         <Logo />
       </Link>
       <Link to={buttonPath}>
         <Button variant="nav">{buttonLabel}</Button>
       </Link>
-    </div>
+    </header>
   );
 };
 
 Header.propTypes = {
   // Extra classes that is passed
   className: PropTypes.string,
-  // Location from React Router will always be available as an object
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
 };
 
 Header.defaultProps = {
@@ -41,4 +41,4 @@ Header.defaultProps = {
   className: '',
 };
 
-export default withRouter(Header);
+export default Header;

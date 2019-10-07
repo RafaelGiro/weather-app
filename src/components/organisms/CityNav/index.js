@@ -10,9 +10,9 @@ import CityList from '../../molecules/CityList';
 const CityNav = props => {
   const { className, handler, cityOptions } = props;
   return (
-    <div className={`city-nav ${className}`}>
+    <nav className={`city-nav ${className}`}>
       <CityList handler={handler} cityOptions={cityOptions} />
-    </div>
+    </nav>
   );
 };
 
