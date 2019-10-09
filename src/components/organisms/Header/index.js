@@ -13,11 +13,11 @@ const Header = props => {
   const { className } = props;
   // location hook from react-router v5.1
   const location = useLocation();
-
+  const reg = /minmax$/;
   // Route that the button will point
-  const buttonPath = location.pathname === '/' ? '/minmax' : '/';
+  const buttonPath = reg.test(location.pathname) ? '/' : '/minmax';
   // And its label
-  const buttonLabel = location.pathname === '/' ? 'Visualizar min/max' : 'Previsão do tempo';
+  const buttonLabel = reg.test(location.pathname) ? 'Previsão do tempo' : 'Visualizar min/max';
 
   return (
     <header className={`header ${className}`}>
