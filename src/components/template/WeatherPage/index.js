@@ -31,7 +31,7 @@ const WeatherPage = props => {
     const unitDesc = 'C';
     // API Call by ID
     const cityId = city.id;
-    const callURL = `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${apiKey}&units=${unitAPI}`;
+    const callURL = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${apiKey}&units=${unitAPI}`;
     // API Call by name if ID is not available
     /* const cityName = city.name.split(' - ');
      * const callByNameURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName[0]},${
