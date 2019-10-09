@@ -7,4 +7,8 @@
   &--inactive {
     color: $color-grey-lighter;
   }
+
+  @media only screen and (max-width: $tab-port) {
+    flex-direction: column-reverse;
+  }
 }

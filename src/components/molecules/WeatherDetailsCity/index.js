@@ -14,7 +14,7 @@ const WeatherDetailsCity = props => {
       </p>
       {icon ? (
         <img
-          className="weather-result__img"
+          className="weather-result__details-city__img"
           alt="sunny/cloudy day"
           src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
         />

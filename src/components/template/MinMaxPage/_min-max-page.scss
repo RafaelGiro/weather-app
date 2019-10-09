@@ -3,49 +3,12 @@
 
   grid-template-columns: 1fr 1fr;
 
+  @media only screen and (max-width: $tab-port) {
+    grid-template-columns: 1fr;
+  }
+
   &--inactive {
     grid-template-columns: 1fr;
     color: $color-grey-lighter;
-  }
-}
-
-.min-max-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10rem;
-  position: relative;
-
-  &__title {
-    font-size: 3.2rem;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 200;
-    letter-spacing: 0.2rem;
-
-    &--min {
-      color: $color-min;
-    }
-
-    &--max {
-      color: $color-max;
-    }
-  }
-
-  &__icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 4rem;
-    font-size: 40rem;
-
-    &--min {
-      color: rgba($color-min, 0.1);
-    }
-
-    &--max {
-      color: rgba($color-max, 0.1);
-    }
   }
 }

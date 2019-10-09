@@ -1,3 +1,8 @@
 .city-nav {
   margin-top: 4rem;
+  text-align: center;
+
+  @media only screen and (max-width: $tab-port) {
+    margin-top: 0.8rem;
+  }
 }

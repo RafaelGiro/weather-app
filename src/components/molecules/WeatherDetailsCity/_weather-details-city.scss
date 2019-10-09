@@ -1,7 +1,29 @@
 .weather-result__details-city {
   display: flex;
+
+  &__img {
+    height: 10rem;
+  }
+
+  @media only screen and (max-width: $tab-port) {
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .weather-result__city-name {
-  font-size: 8rem;
+  font-size: 7.2rem;
+
+  @media only screen and (max-width: $mid-desktop) {
+    font-size: 6.4rem;
+  }
+
+  @media only screen and (max-width: $tab-land) {
+    font-size: 5.6rem;
+  }
+
+  @media only screen and (max-width: $phone) {
+    font-size: 4rem;
+    text-align: center;
+  }
 }

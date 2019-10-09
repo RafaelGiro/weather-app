@@ -32,7 +32,7 @@ MinMaxCard.propTypes = {
   // Extra classes that is passed
   className: PropTypes.string,
   // Title of the card
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   // City name currently being displayed
   cityName: PropTypes.string.isRequired,
   // City's country
@@ -46,6 +46,8 @@ MinMaxCard.propTypes = {
 MinMaxCard.defaultProps = {
   // Default value of no aditional classes
   className: '',
+  // Inactive Cards doesn't have a title
+  title: '',
   // No country for the default value
   country: '',
   // No variant for the inactive state
